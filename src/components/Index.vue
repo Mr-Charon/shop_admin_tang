@@ -8,7 +8,7 @@
       <h1>后台管理系统</h1>
       </div>
       <div class="logout">
-        欢迎光临~ <a href="javascript;:">退出</a>
+        欢迎光临~ <a href="javascript:;" @click="logout">退出</a>
       </div>
     </el-header>
     <!-- 侧边栏 -->
@@ -22,7 +22,7 @@
           <i class="el-icon-location"></i>
           <span>用户管理</span>
         </template>
-          <el-menu-item index="1-1">
+          <el-menu-item index="users">
            <i class="el-icon-s-promotion"></i>
            <span slot='title'>用户列表</span>
           </el-menu-item>
@@ -51,7 +51,20 @@
 
 <script>
 export default {
-
+  methods: {
+    logout () {
+      // 弹出提示框
+      this.$confirm('亲，确定离开么？', '温馨提示', {
+        type: 'warning'
+      }).then(() => {
+        this.$message.success('退出成功')
+        // 清除本地token
+        localStorage.removeItem('token')
+        // 跳转到登录页
+        this.$router.push('/login')
+      })
+    }
+  }
 }
 </script>
 
