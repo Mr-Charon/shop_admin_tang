@@ -72,14 +72,16 @@ export default {
  .login{
    width: 100%;
    height: 100%;
-   background-color: #7f9b9b;
+  background: url('../assets/2917.jpg') no-repeat;
+   background-size: 100% 100%;
    overflow: hidden;
    .el-form{
     width: 400px;
     height: 160px;
     padding: 20px;
     padding-top: 80px;
-    background-color: #fff;
+    background-color: rgba(255,255,255,.3);
+
     margin: 0 auto;
     margin-top: 150px;
     position: relative;
